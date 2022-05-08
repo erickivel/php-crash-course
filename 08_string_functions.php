@@ -46,9 +46,10 @@ if (str_ends_with($string, 'ld')) {
   echo 'YES';
 }
 
-// HTML Entities
+// HTML Entities Security purposes
 $string2 = '<h1>Hello World</h1>';
 echo htmlentities($string2);
+// or special chars
 
 // Formatted Strings - useful when you have outside data
 // Different specifiers for different data types
