@@ -40,7 +40,28 @@ class User
 $user1 = new User('eric', 'eric@email', 'pass');
 $user2 = new User('brad', 'brad@email', 'pass');
 
-var_dump($user1);
-var_dump($user2);
+// var_dump($user1);
+// var_dump($user2);
 
 // echo $user1->get_name();
+
+
+// Inheritance
+
+class Employee extends User
+{
+  public function __construct($name, $email, $password, $title)
+  {
+    parent::__construct($name, $email, $password);
+    $this->title = $title;
+  }
+
+  public function get_title()
+  {
+    return $this->title;
+  }
+}
+
+$employee1 = new Employee('Kivel', 'kivel@email', '123123', 'Assistant to the regional manager');
+
+echo $employee1->get_title();
